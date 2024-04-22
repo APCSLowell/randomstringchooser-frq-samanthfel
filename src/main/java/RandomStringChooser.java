@@ -1,20 +1,20 @@
 import java.util.*;
 public class RandomStringChooser
 {
-  private String[] values;
+  private String[] ans;
   private int valuesRemaining;
   public RandomStringChooser(String[] vals){
-    values = new String[vals.length];
-    for (int i =0; i<values.length;i++)
-      values[i] = vals[i];
-    valuesRemaining = values.length;
+    ans = new String[vals.length];
+    for (int i =0; i<ans.length;i++)
+      ans[i] = vals[i];
+    valuesRemaining = ans.length;
   }
   public String getNext(){
     if (valuesRemaining ==0)
       return "NONE";
     int index = (int)(Math.random()*valuesRemaining);
-    String selected = values[index];
-    values[index]=values[valuesRemaining-1];
+    String selected = ans[index];
+    ans[index]=ans[valuesRemaining-1];
     valuesRemaining--;
     return selected;
   }
